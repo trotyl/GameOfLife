@@ -26,7 +26,7 @@ namespace gameoflife
 
 		public static string Format(this bool[][] cellses)
 		{
-			return null;
+			return $"{cellses.Length} {cellses[0].Length}{Environment.NewLine}" + string.Join(Environment.NewLine, cellses.Select((cells, i) => string.Join("", cells.Select(cell => cell? "*": "."))));
 		}
 
 		public static int Count(bool[][] cells, int x, int y)

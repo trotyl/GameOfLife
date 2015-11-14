@@ -250,5 +250,25 @@ namespace gameoflifetest
 			Assert.AreEqual (false, Solver.Judge(false, int.MaxValue));
 		}
 	}
+
+	[TestFixture]
+	public class SolverFormatTest
+	{
+		[Test]
+		public void format_should_get_correct_result()
+		{
+			var grid = new bool[][] 
+			{ 
+				new[] { true, false, true }, 
+				new[] { false, false, true },
+			};
+			var result = grid.Format ();
+
+			Assert.AreEqual (@"2 3
+*.*
+..*", result);
+				
+		}
+	}
 }
 
