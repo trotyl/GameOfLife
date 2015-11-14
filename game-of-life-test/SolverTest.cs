@@ -8,7 +8,7 @@ namespace gameoflifetest
 	public class SolverParseTest
 	{
 		[Test]
-		public void parse_should_have_the_right_result()
+		public void parse_should_have_the_right_result ()
 		{
 			var input = @"3 3
 ..*
@@ -34,7 +34,7 @@ namespace gameoflifetest
 	public class SolverGenerateTest
 	{
 		[Test]
-		public void generate_should_have_correct_result_for_live_cell_with_less_than_two_live_neighbor()
+		public void generate_should_have_correct_result_for_live_cell_with_less_than_two_live_neighbor ()
 		{
 			var original = new bool[][] 
 			{ 
@@ -56,7 +56,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void generate_should_have_correct_result_for_live_cell_with_more_than_three_live_neighbor()
+		public void generate_should_have_correct_result_for_live_cell_with_more_than_three_live_neighbor ()
 		{
 			var original = new bool[][] 
 			{ 
@@ -78,7 +78,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void generate_should_have_correct_result_for_live_cell_with_two_or_three_live_neighbor()
+		public void generate_should_have_correct_result_for_live_cell_with_two_or_three_live_neighbor ()
 		{
 			var original = new bool[][] 
 			{ 
@@ -100,7 +100,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void generate_should_have_correct_result_for_dead_cell_with_three_live_neighbor()
+		public void generate_should_have_correct_result_for_dead_cell_with_three_live_neighbor ()
 		{
 			var original = new bool[][] 
 			{ 
@@ -126,7 +126,7 @@ namespace gameoflifetest
 	public class SolverCountTest
 	{
 		[Test]
-		public void count_should_have_correct_result_for_1_times_1_grid()
+		public void count_should_have_correct_result_for_1_times_1_grid ()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -142,7 +142,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_result_for_1_times_2_grid()
+		public void count_should_have_correct_result_for_1_times_2_grid ()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -166,7 +166,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_result_for_2_times_2_grid()
+		public void count_should_have_correct_result_for_2_times_2_grid ()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -190,7 +190,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_result_for_3_times_3_grid()
+		public void count_should_have_correct_result_for_3_times_3_grid ()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -211,14 +211,14 @@ namespace gameoflifetest
 	public class SolverJudgeTest
 	{
 		[Test]
-		public void judge_should_get_dead_for_live_cell_with_less_than_2_live_neighbor()
+		public void judge_should_get_dead_for_live_cell_with_less_than_2_live_neighbor ()
 		{
 			Assert.AreEqual (false, Solver.Judge(true, 0));
 			Assert.AreEqual (false, Solver.Judge(true, 1));
 		}
 
 		[Test]
-		public void judge_should_get_dead_for_live_cell_with_more_than_3_live_neighbor()
+		public void judge_should_get_dead_for_live_cell_with_more_than_3_live_neighbor ()
 		{
 			Assert.AreEqual (false, Solver.Judge(true, 4));
 			Assert.AreEqual (false, Solver.Judge(true, 5));
@@ -226,7 +226,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void judge_should_get_alive_for_live_cell_with_2_or_3_live_neighbor()
+		public void judge_should_get_alive_for_live_cell_with_2_or_3_live_neighbor ()
 		{
 			Assert.AreEqual (true, Solver.Judge(true, 2));
 			Assert.AreEqual (true, Solver.Judge(true, 3));
@@ -234,13 +234,13 @@ namespace gameoflifetest
 
 
 		[Test]
-		public void judge_should_get_alive_for_dead_cell_with_3_live_neighbor()
+		public void judge_should_get_alive_for_dead_cell_with_3_live_neighbor ()
 		{
 			Assert.AreEqual (true, Solver.Judge(false, 3));
 		}
 
 		[Test]
-		public void judge_should_get_dead_for_dead_cell_with_not_3_live_neighbor()
+		public void judge_should_get_dead_for_dead_cell_with_not_3_live_neighbor ()
 		{
 			Assert.AreEqual (false, Solver.Judge(false, 0));
 			Assert.AreEqual (false, Solver.Judge(false, 1));
@@ -255,7 +255,7 @@ namespace gameoflifetest
 	public class SolverFormatTest
 	{
 		[Test]
-		public void format_should_get_correct_result()
+		public void format_should_get_correct_result ()
 		{
 			var grid = new bool[][] 
 			{ 
