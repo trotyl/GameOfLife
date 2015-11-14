@@ -29,7 +29,7 @@ namespace gameoflife
             return $"{cellses.Length} {cellses[0].Length}{Environment.NewLine}" + string.Join(Environment.NewLine, cellses.Select((cells, i) => string.Join("", cells.Select(cell => cell? "*": "."))));
         }
 
-        public static int Count (bool[][] cells, int x, int y)
+        public static int Count(bool[][] cells, int x, int y)
         {
             return Enumerable.Range(x == 0 ? 0 : -1, (x == cells.Length - 1 ? 1 : 2) - (x == 0 ? 0 : -1))
                 .SelectMany(i => Enumerable.Range(y == 0 ? 0 : -1, (y == cells [0].Length - 1 ? 1 : 2) - (y == 0 ? 0 : -1)).Select (j => new { Dx = i, Dy = j }))
