@@ -10,6 +10,7 @@ namespace gameoflife
             return input
                 .Split(Environment.NewLine.ToCharArray())
                 .Skip(1)
+                .Where(line => !string.IsNullOrWhiteSpace(line))
                 .Select(line => line.Select(c => c == '*'))
                 .Select(line => line.ToArray())
                 .ToArray();
