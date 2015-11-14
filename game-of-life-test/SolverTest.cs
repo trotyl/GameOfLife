@@ -158,6 +158,13 @@ namespace gameoflifetest
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 5));
 			Assert.AreEqual (false, Solver.JudgeStatus(true, int.MaxValue));
 		}
+
+		[Test]
+		public void judge_should_get_alive_for_live_cell_with_2_or_3_live_neighbor()
+		{
+			Assert.AreEqual (true, Solver.JudgeStatus(true, 2));
+			Assert.AreEqual (true, Solver.JudgeStatus(true, 3));
+		}
 	}
 }
 
