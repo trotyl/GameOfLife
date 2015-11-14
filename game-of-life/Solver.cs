@@ -32,7 +32,7 @@ namespace gameoflife
 		public static int CountNeighbors(bool[][] cells, int x, int y)
 		{
 			return Enumerable.Range (x == 0 ? 0 : -1, (x == cells.Length - 1 ? 1 : 2) - (x == 0 ? 0 : -1))
-				.SelectMany (i => Enumerable.Range (y == 0 ? 0 : -1, (y == cells [0].Length - 1 ? 1 : 2) - (y == 0 ? 0 : -1)).Select (j => { Console.WriteLine($"{i} {j}"); return new { Dx = i, Dy = j };}))
+				.SelectMany (i => Enumerable.Range (y == 0 ? 0 : -1, (y == cells [0].Length - 1 ? 1 : 2) - (y == 0 ? 0 : -1)).Select (j => new { Dx = i, Dy = j }))
 				.Where (tuple => !(tuple.Dx == 0 && tuple.Dy == 0))
 				.Aggregate (0, (sum, tuple) => sum + (cells [x + tuple.Dx] [y + tuple.Dy]? 1: 0));
 		}

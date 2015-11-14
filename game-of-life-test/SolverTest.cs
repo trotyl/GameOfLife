@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using gameoflife;
 
 namespace gameoflifetest
@@ -96,6 +97,47 @@ namespace gameoflifetest
 			Assert.AreEqual (1, Solver.CountNeighbors (grid2, 0, 1));
 			Assert.AreEqual (0, Solver.CountNeighbors (grid3, 0, 0));
 			Assert.AreEqual (0, Solver.CountNeighbors (grid3, 0, 1));
+		}
+
+		[Test]
+		public void count_should_have_correct_for_2_times_2_grid()
+		{
+			var grid1 = new bool[][] 
+			{ 
+				new[] { true, true }, 
+				new[] { true, true }, 
+			};
+			var grid2 = new bool[][] 
+			{ 
+				new[] { true, false }, 
+				new[] { false, true }, 
+			};
+
+			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 0, 0));
+			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 0, 1));
+			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 1, 0));
+			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 1, 1));
+			Assert.AreEqual (1, Solver.CountNeighbors (grid2, 0, 0));
+			Assert.AreEqual (2, Solver.CountNeighbors (grid2, 0, 1));
+			Assert.AreEqual (2, Solver.CountNeighbors (grid2, 1, 0));
+			Assert.AreEqual (1, Solver.CountNeighbors (grid2, 1, 1));
+		}
+
+		[Test]
+		public void count_should_have_correct_for_3_times_3_grid()
+		{
+			var grid1 = new bool[][] 
+			{ 
+				new[] { true, false, true }, 
+				new[] { false, true, false }, 
+				new[] { true, false, true }, 
+			};
+
+			Assert.AreEqual (1, Solver.CountNeighbors (grid1, 0, 0));
+			Assert.AreEqual (4, Solver.CountNeighbors (grid1, 1, 1));
+			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 1, 2));
+			Assert.AreEqual (1, Solver.CountNeighbors (grid1, 2, 2));
+
 		}
 	}
 }
