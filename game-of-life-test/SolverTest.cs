@@ -98,6 +98,28 @@ namespace gameoflifetest
 			Assert.AreEqual(true, result[2][1]);
 			Assert.AreEqual(false, result[2][2]);
 		}
+
+		[Test]
+		public void generate_should_have_correct_result_for_dead_cell_with_three_live_neighbor()
+		{
+			var original = new bool[][] 
+			{ 
+				new[] { true, false, true }, 
+				new[] { false, false, false }, 
+				new[] { false, false, true }
+			};
+			var result = original.Generate();
+
+			Assert.AreEqual(false, result[0][0]);
+			Assert.AreEqual(false, result[0][1]);
+			Assert.AreEqual(false, result[0][2]);
+			Assert.AreEqual(false, result[1][0]);
+			Assert.AreEqual(true, result[1][1]);
+			Assert.AreEqual(false, result[1][2]);
+			Assert.AreEqual(false, result[2][0]);
+			Assert.AreEqual(false, result[2][1]);
+			Assert.AreEqual(false, result[2][2]);
+		}
 	}
 
 	[TestFixture]
