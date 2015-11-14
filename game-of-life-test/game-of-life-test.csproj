@@ -35,9 +35,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
+    <Compile Include="SolverTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\game-of-life\game-of-life.csproj">
+      <Project>{06376721-EF78-4453-BEDC-89264F7A93B5}</Project>
+      <Name>game-of-life</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
