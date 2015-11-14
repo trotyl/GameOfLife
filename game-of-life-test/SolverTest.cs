@@ -145,10 +145,18 @@ namespace gameoflifetest
 	public class SolverJudgeTest
 	{
 		[Test]
-		public void judge_should_have_correct_result_for_live_cell_with_less_than_2_live_neighbor()
+		public void judge_should_get_die_for_live_cell_with_less_than_2_live_neighbor()
 		{
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 0));
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 1));
+		}
+
+		[Test]
+		public void judge_should_get_die_for_live_cell_with_more_than_3_live_neighbor()
+		{
+			Assert.AreEqual (false, Solver.JudgeStatus(true, 4));
+			Assert.AreEqual (false, Solver.JudgeStatus(true, 5));
+			Assert.AreEqual (false, Solver.JudgeStatus(true, int.MaxValue));
 		}
 	}
 }
