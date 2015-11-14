@@ -37,9 +37,9 @@ namespace gameoflife
 				.Aggregate (0, (sum, tuple) => sum + (cells [x + tuple.Dx] [y + tuple.Dy]? 1: 0));
 		}
 
-		public static bool JudgeStatus(bool status, int neighbors)
+		public static bool JudgeStatus(bool status, int count)
 		{
-			return false;
+			return status ? (count >= 2 && count <= 3) : (count == 3);
 		}
 	}
 }

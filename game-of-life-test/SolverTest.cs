@@ -60,7 +60,7 @@ namespace gameoflifetest
 	public class SolverCountTest
 	{
 		[Test]
-		public void count_should_have_correct_for_1_times_1_grid()
+		public void count_should_have_correct_result_for_1_times_1_grid()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -76,7 +76,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_for_1_times_2_grid()
+		public void count_should_have_correct_result_for_1_times_2_grid()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -100,7 +100,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_for_2_times_2_grid()
+		public void count_should_have_correct_result_for_2_times_2_grid()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -124,7 +124,7 @@ namespace gameoflifetest
 		}
 
 		[Test]
-		public void count_should_have_correct_for_3_times_3_grid()
+		public void count_should_have_correct_result_for_3_times_3_grid()
 		{
 			var grid1 = new bool[][] 
 			{ 
@@ -138,6 +138,17 @@ namespace gameoflifetest
 			Assert.AreEqual (3, Solver.CountNeighbors (grid1, 1, 2));
 			Assert.AreEqual (1, Solver.CountNeighbors (grid1, 2, 2));
 
+		}
+	}
+
+	[TestFixture]
+	public class SolverJudgeTest
+	{
+		[Test]
+		public void judge_should_have_correct_result_for_live_cell_with_less_than_2_live_neighbor()
+		{
+			Assert.AreEqual (false, Solver.JudgeStatus(true, 0));
+			Assert.AreEqual (false, Solver.JudgeStatus(true, 1));
 		}
 	}
 }
