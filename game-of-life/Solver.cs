@@ -11,8 +11,7 @@ namespace gameoflife
                 .Split(Environment.NewLine.ToCharArray())
                 .Skip(1)
                 .Where(line => !string.IsNullOrWhiteSpace(line))
-                .Select(line => line.Select(c => c == '*'))
-                .Select(line => line.ToArray())
+                .Select(line => line.Select(c => c == '*').ToArray())
                 .ToArray();
         }
 
@@ -20,8 +19,7 @@ namespace gameoflife
         {
             return cellses
                 .Select((cells, i) => cells.Select((cell, j) => new { Status = cell, Count = Count(cellses, i, j) }))
-                .Select(cellsWithCounts => cellsWithCounts.Select(cellWithCount => Judge(cellWithCount.Status, cellWithCount.Count)))
-                .Select(cells => cells.ToArray())
+                .Select(cellsWithCounts => cellsWithCounts.Select(cellWithCount => Judge(cellWithCount.Status, cellWithCount.Count)).ToArray())
                 .ToArray();
         }
 
