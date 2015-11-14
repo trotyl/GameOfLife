@@ -4,7 +4,7 @@ using gameoflife;
 namespace gameoflifetest
 {
 	[TestFixture]
-	public class SolverTest
+	public class SolverParseTest
 	{
 		[Test]
 		public void parse_should_have_the_right_result()
@@ -26,6 +26,12 @@ namespace gameoflifetest
 			Assert.AreEqual(false, result[2][2]);
 		}
 
+
+	}
+
+	[TestFixture]
+	public class SolverGenerateTest
+	{
 		[Test]
 		public void generate_should_have_correct_result_for_live_cell_with_less_than_two_live_neighbor()
 		{
@@ -46,6 +52,26 @@ namespace gameoflifetest
 			Assert.AreEqual(false, result[2][0]);
 			Assert.AreEqual(false, result[2][1]);
 			Assert.AreEqual(false, result[2][2]);
+		}
+	}
+
+	[TestFixture]
+	public class SolverCountTest
+	{
+		[Test]
+		public void count_should_have_correct_for_1_times_1_grid()
+		{
+			var grid1 = new bool[][] 
+			{ 
+				new[] { true }, 
+			};
+			var grid2 = new bool[][] 
+			{ 
+				new[] { false }, 
+			};
+
+			Assert.AreEqual (0, Solver.CountNeighbors (grid1, 0, 0));
+			Assert.AreEqual (0, Solver.CountNeighbors (grid2, 0, 0));
 		}
 	}
 }
