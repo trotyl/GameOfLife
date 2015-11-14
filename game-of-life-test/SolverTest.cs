@@ -73,6 +73,30 @@ namespace gameoflifetest
 			Assert.AreEqual (0, Solver.CountNeighbors (grid1, 0, 0));
 			Assert.AreEqual (0, Solver.CountNeighbors (grid2, 0, 0));
 		}
+
+		[Test]
+		public void count_should_have_correct_for_1_times_2_grid()
+		{
+			var grid1 = new bool[][] 
+			{ 
+				new[] { true, true }, 
+			};
+			var grid2 = new bool[][] 
+			{ 
+				new[] { true, false }, 
+			};
+			var grid3 = new bool[][] 
+			{ 
+				new[] { false, false }, 
+			};
+
+			Assert.AreEqual (1, Solver.CountNeighbors (grid1, 0, 0));
+			Assert.AreEqual (1, Solver.CountNeighbors (grid1, 0, 1));
+			Assert.AreEqual (0, Solver.CountNeighbors (grid2, 0, 0));
+			Assert.AreEqual (1, Solver.CountNeighbors (grid2, 0, 1));
+			Assert.AreEqual (0, Solver.CountNeighbors (grid3, 0, 0));
+			Assert.AreEqual (0, Solver.CountNeighbors (grid3, 0, 1));
+		}
 	}
 }
 
