@@ -145,14 +145,14 @@ namespace gameoflifetest
 	public class SolverJudgeTest
 	{
 		[Test]
-		public void judge_should_get_die_for_live_cell_with_less_than_2_live_neighbor()
+		public void judge_should_get_dead_for_live_cell_with_less_than_2_live_neighbor()
 		{
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 0));
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 1));
 		}
 
 		[Test]
-		public void judge_should_get_die_for_live_cell_with_more_than_3_live_neighbor()
+		public void judge_should_get_dead_for_live_cell_with_more_than_3_live_neighbor()
 		{
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 4));
 			Assert.AreEqual (false, Solver.JudgeStatus(true, 5));
@@ -164,6 +164,24 @@ namespace gameoflifetest
 		{
 			Assert.AreEqual (true, Solver.JudgeStatus(true, 2));
 			Assert.AreEqual (true, Solver.JudgeStatus(true, 3));
+		}
+
+
+		[Test]
+		public void judge_should_get_alive_for_dead_cell_with_3_live_neighbor()
+		{
+			Assert.AreEqual (true, Solver.JudgeStatus(false, 3));
+		}
+
+		[Test]
+		public void judge_should_get_dead_for_dead_cell_with_not_3_live_neighbor()
+		{
+			Assert.AreEqual (false, Solver.JudgeStatus(false, 0));
+			Assert.AreEqual (false, Solver.JudgeStatus(false, 1));
+			Assert.AreEqual (false, Solver.JudgeStatus(false, 2));
+			Assert.AreEqual (false, Solver.JudgeStatus(false, 4));
+			Assert.AreEqual (false, Solver.JudgeStatus(false, 5));
+			Assert.AreEqual (false, Solver.JudgeStatus(false, int.MaxValue));
 		}
 	}
 }
