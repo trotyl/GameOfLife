@@ -2,7 +2,7 @@
 
 namespace gameoflife
 {
-	class MainClass
+	public class Program
 	{
 		public static void Main (string[] args)
 		{
