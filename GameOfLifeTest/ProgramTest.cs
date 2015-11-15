@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using gameoflife;
+using Gameoflife;
 using System;
 
-namespace gameoflifetest
+namespace GameoflifeTest
 {
     [TestFixture]
     public class ProgramTest

@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using System;
-using gameoflife;
+using Gameoflife;
 
-namespace gameoflifetest
+namespace GameoflifeTest
 {
     [TestFixture]
     public class SolverParseTest

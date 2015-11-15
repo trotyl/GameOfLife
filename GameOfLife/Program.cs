@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace gameoflife
+namespace Gameoflife
 {
     public class Program
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace gameoflife
+namespace Gameoflife
 {
     public static class Solver
     {
